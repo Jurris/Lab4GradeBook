@@ -16,16 +16,14 @@ public class AccountHolderOjects {
 		AccountHolder student4 = new AccountHolder();
 		AccountHolder student5 = new AccountHolder();
 
-		File file = new File("classData.txt");
-
-		Scanner input = new Scanner(file);
-
-		input.useDelimiter(",\\s");
-
 		String[] namesStr = new String[5];
 		String[] gradesStr = new String[5];
 		int theNewGrades[] = new int[5];
 		String[] theNewNames = new String[5];
+
+		File file = new File("classData.txt");
+		Scanner input = new Scanner(file);
+		input.useDelimiter(",\\s");
 
 		for (int i = 0; i < namesStr.length; i++) {
 			namesStr[i] = input.next();
@@ -43,45 +41,63 @@ public class AccountHolderOjects {
 		} catch (NumberFormatException nfe) {
 			System.out.println("NumberFormatException: " + nfe.getMessage());
 		}
+
 		input.close();
 
-		student1.fname = theNewNames[0];
-		student1.gradepoints = theNewGrades[0];
-		student1.testForLetterGradeEarned();
-		System.out.println(student1.fname + " earned a " + student1.letterGrade + ".");
+		AccountHolder[] students = { student1, student2, student3, student4, student5 };
 
-		student2.fname = theNewNames[1];
-		student2.gradepoints = theNewGrades[1];
-		student2.testForLetterGradeEarned();
-		System.out.println(student2.fname + " earned a " + student2.letterGrade + ".");
+		for (int i = 0; i < students.length; i++) {
+			students[i].fname = theNewNames[i];
+			students[i].gradepoints = theNewGrades[i];
 
-		student3.fname = theNewNames[2];
-		student3.gradepoints = theNewGrades[2];
-		student3.testForLetterGradeEarned();
-		System.out.println(student3.fname + " earned a " + student3.letterGrade + ".");
+		}
 
-		student4.fname = theNewNames[3];
-		student4.gradepoints = theNewGrades[3];
-		student4.testForLetterGradeEarned();
-		System.out.println(student4.fname + " earned a " + student4.letterGrade + ".");
+		for (AccountHolder s : students) {
+			s.testForLetterGradeEarned();
+			System.out.println(
+					s.fname + " earned " + s.gradepoints + ", resulting with the letter grade " + s.letterGrade + ".");
+		}
+		int largest = theNewGrades[0];
+		for (int i = 0; i < theNewGrades.length; i++) {
+			if (theNewGrades[i] > largest) {
+				largest = theNewGrades[i];
+			}
+		}
 
-		student5.fname = theNewNames[4];
-		student5.gradepoints = theNewGrades[4];
-		student5.testForLetterGradeEarned();
-		System.out.println(student5.fname + " earned a " + student5.letterGrade + ".");
-
+		for (AccountHolder s : students) {
+			if (s.gradepoints == largest) {
+				System.out.println(s.fname + " earned the hightest grade in class: " + s.letterGrade);
+			}
+		}
+		// Print conclusion
 		System.out
 				.println(
 						"The average grade in the class is "
 								+ (student1.gradepoints + student2.gradepoints + student3.gradepoints
 										+ student4.gradepoints + student5.gradepoints) / 5
 								+ " points, and the average grade is B-.");
-		//Now we set output from console to file and then reprint above output
+
+		// Now we set output to .txt
+		// Set output to the newly created PrintStream variable out
 		PrintStream out = new PrintStream(new FileOutputStream("GradeReport.txt"));
 		System.setOut(out);
-		out.println("The average grade in the class is " + (student1.gradepoints + student2.gradepoints
-				+ student3.gradepoints + student4.gradepoints + student5.gradepoints) / 5
-				+ " points, and the average grade is B-.");
+
+		// Iterate through the final output
+		for (AccountHolder s : students) {
+			System.out.println(
+					s.fname + " earned " + s.gradepoints + ", resulting with the letter grade " + s.letterGrade + ".");
+		}
+
+		// Print conclusion to .txt
+		out.println("The average grade in the class is "
+				+ (student1.gradepoints + student2.gradepoints + student3.gradepoints + student4.gradepoints
+						+ student5.gradepoints) / 5
+				+ " points, and the average grade is B-." + "\nThe student wit the highest grade is " + "");
+		for (AccountHolder s : students) {
+			if (s.gradepoints == largest) {
+				System.out.println(s.fname + " earned the hightest grade in class: " + s.letterGrade);
+			}
+		}
 
 	}
 

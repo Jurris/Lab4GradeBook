@@ -1,0 +1,8 @@
+John earned 308, resulting with the letter grade C+.
+Hamid earned 370, resulting with the letter grade A-.
+Tracy earned 331, resulting with the letter grade B-.
+Albert earned 336, resulting with the letter grade B.
+Ana earned 321, resulting with the letter grade B-.
+The average grade in the class is 333 points, and the average grade is B-.
+The student wit the highest grade is 
+Hamid earned the hightest grade in class: A-
