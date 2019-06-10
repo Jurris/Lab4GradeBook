@@ -93,10 +93,10 @@ public class AccountHolderOjects {
 		out.println("The average grade in the class is "
 				+ (student1.gradepoints + student2.gradepoints + student3.gradepoints + student4.gradepoints
 						+ student5.gradepoints) / 5
-				+ " points, and the average grade is B-." + "\nThe student wit the highest grade is " + "");
+				+ " points, and the average grade is B-.");
 		for (AccountHolder s : students) {
 			if (s.gradepoints == largest) {
-				System.out.println(s.fname + " earned the hightest grade in class: " + s.letterGrade);
+				System.out.println(s.fname + " earned the highest grade in class: " + s.letterGrade);
 			}
 		}
 
