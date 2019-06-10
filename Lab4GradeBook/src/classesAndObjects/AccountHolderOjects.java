@@ -2,17 +2,27 @@ package classesAndObjects;
 
 public class AccountHolderOjects {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		AccountHolder john = new AccountHolder();
 		AccountHolder hamid = new AccountHolder();
 		AccountHolder tracy = new AccountHolder();
 		AccountHolder albert = new AccountHolder();
 		AccountHolder ana = new AccountHolder();
+		FileReadIntoArray names1 = new FileReadIntoArray();
+		
+		
 
 		john.fname = "John";
 		john.gradepoints = 308;
 		john.testForLetterGradeEarned();
 		System.out.println(john.fname + " earned a " + john.letterGrade + ".");
+		
+		System.out.println(FileReadIntoArray.class);
+
+		//john.fname = FileReadIntoArray.names[2];
+		//john.gradepoints = 308;
+		//john.testForLetterGradeEarned();
+	//	System.out.println(john.fname + " earned a " + john.letterGrade + ".");
 
 		hamid.fname = "Hamid";
 		hamid.gradepoints = 370;
@@ -36,7 +46,14 @@ public class AccountHolderOjects {
 
 		System.out.println("The average grade in the class is "
 				+ (john.gradepoints + hamid.gradepoints + tracy.gradepoints + albert.gradepoints + ana.gradepoints) / 5
-				+ " and the average grade is B-.");
+				+ " points, and the average grade is B-.");
+		
+		
+	 /**
+		
+		
+		**/
+		
 
 	}
 
