@@ -24,7 +24,8 @@ public class AccountHolderOjects {
 		File file = new File("classData.txt");
 		Scanner input = new Scanner(file);
 		input.useDelimiter(",\\s");
-
+  
+		
 		for (int i = 0; i < namesStr.length; i++) {
 			namesStr[i] = input.next();
 		}
