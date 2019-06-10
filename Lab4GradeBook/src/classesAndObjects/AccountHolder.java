@@ -24,55 +24,53 @@ public class AccountHolder {
 		if (gradepoints >= 388) {
 			letterAPlus = true;
 			letterGrade = "A+";
-			//System.out.println("A+");
+			// System.out.println("A+");
 		} else if (gradepoints >= 372) {
 			letterA = true;
 			letterGrade = "A";
-			//System.out.println("A");
+			// System.out.println("A");
 		} else if (gradepoints >= 360) {
 			letterAMinus = true;
 			letterGrade = "A-";
-			//System.out.println("A-");
+			// System.out.println("A-");
 		} else if (gradepoints >= 340) {
 			letterBPlus = true;
 			letterGrade = "B+";
-			//System.out.println("B+");
+			// System.out.println("B+");
 		} else if (gradepoints >= 336) {
 			letterB = true;
 			letterGrade = "B";
-			//System.out.println("B");
+			// System.out.println("B");
 		} else if (gradepoints >= 320) {
 			letterBMinus = true;
 			letterGrade = "B-";
-			//System.out.println("B-");
+			// System.out.println("B-");
 		} else if (gradepoints >= 308) {
 			letterCPlus = true;
 			letterGrade = "C+";
-			//System.out.println("C+");
+			// System.out.println("C+");
 		} else if (gradepoints >= 280) {
 			letterC = true;
 			letterGrade = "C";
-			//System.out.println("C");
+			// System.out.println("C");
 		} else if (gradepoints >= 268) {
-			letterDPlus = true;
+			letterCminus = true;
 			letterGrade = "C-";
-			//System.out.println("C-");
+			// System.out.println("C-");
 		} else if (gradepoints >= 252) {
-			letterD = true;
+			letterDPlus = true;
 			letterGrade = "D+";
-			//System.out.println("D+");
+			// System.out.println("D+");
 		} else if (gradepoints >= 240) {
-			letterDMinus = true;
+			letterD = true;
 			letterGrade = "D";
-			//System.out.println("D");
+			// System.out.println("D");
 		} else if (gradepoints >= 0) {
 			letterF = true;
 			letterGrade = "F";
-			//System.out.println("F");
+			// System.out.println("F");
 
 		}
-		
-	
 
 	}
 }
